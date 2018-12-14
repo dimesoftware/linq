@@ -33,7 +33,7 @@ namespace System.Linq
         /// <param name="defaultB"></param>
         /// <param name="cmp"></param>
         /// <returns></returns>
-        /// <remarks>Courtesy of https://stackoverflow.com/a/13503860/1842261</remarks>/>
+        /// <remarks>Courtesy of https://stackoverflow.com/a/13503860/1842261 </remarks>
         public static IEnumerable<TResult> FullOuterJoin<TA, TB, TKey, TResult>(
         this IEnumerable<TA> a,
         IEnumerable<TB> b,
@@ -58,7 +58,7 @@ namespace System.Linq
         }
 
         /// <summary>
-        ///  Zips the (uneven) collections together
+        /// Zips the (uneven) collections together
         /// </summary>
         /// <typeparam name="T">The collection type</typeparam>
         /// <param name="first">The first collection to join</param>
@@ -81,7 +81,7 @@ namespace System.Linq
         }
 
         /// <summary>
-        ///  Zips the (uneven) collections together
+        /// Zips the (uneven) collections together
         /// </summary>
         /// <typeparam name="TFirst">The type of the first collection</typeparam>
         /// <typeparam name="TSecond">The type of the second collection</typeparam>
