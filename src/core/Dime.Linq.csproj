@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.2.0</Version>
+    <Authors>Dimenics</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Product>Dimenics</Product>
+    <Description>Extensions for the LINQ library</Description>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>Visual Studio Team Services</RepositoryUrl>
+    <PackageIconUrl>http://dimenuget.azurewebsites.net/Images/dimenuget.png</PackageIconUrl>
+    <PackageProjectUrl>http://www.dimenics.com/products/dime-scheduler/</PackageProjectUrl>
+    <Copyright>Copyright © 2018</Copyright>
+    <PackageTags>linq</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+  </PropertyGroup>
+
+</Project>
