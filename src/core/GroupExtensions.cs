@@ -5,7 +5,7 @@ namespace System.Linq
     /// <summary>
     ///
     /// </summary>
-    public static partial class LinqUtilities
+    public static partial class GroupExtensions
     {
         /// <summary>
         ///

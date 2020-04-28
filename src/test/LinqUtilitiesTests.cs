@@ -11,24 +11,6 @@ namespace Dime.Linq.Tests
     public class LinqUtilitiesTests
     {
         [TestMethod]
-        public void Linq_IfNotNull_ItemIsNull_ReturnsDefaultValue()
-        {
-            Customer customer = null;
-            string result = customer.IfNotNull<Customer, string>(x => "Hello world!", "Goodbye world!");
-
-            Assert.IsTrue(result == "Goodbye world!");
-        }
-
-        [TestMethod]
-        public void Linq_IfNotNull_ItemIsNotNull_ReturnsDefaultValue()
-        {
-            Customer customer = new Customer();
-            string result = customer.IfNotNull<Customer, string>(x => "Hello world!", "Goodbye world!");
-
-            Assert.IsTrue(result == "Hello world!");
-        }
-
-        [TestMethod]
         public void Linq_SelectTry_ListIsNull_ThrowsNullReferenceException()
         {
             bool ParseId(Client client, out int number)

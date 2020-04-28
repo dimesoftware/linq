@@ -2,7 +2,7 @@
 
 namespace System.Linq
 {
-    public static class JoinUtilities
+    public static class JoinExtensions
     {
         /// <summary>
         /// Splits up the collection into a selection of records that match the filter and one pile of rejects.
