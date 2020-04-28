@@ -2,7 +2,7 @@
 
 namespace System.Linq
 {
-    public static partial class ExceptionHandler
+    public static class ExceptionHandler
     {
         /// <summary>
         ///

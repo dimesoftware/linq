@@ -5,7 +5,7 @@ namespace System.Linq
     /// <summary>
     ///
     /// </summary>
-    public static partial class DistinctExtensions
+    public static class DistinctExtensions
     {
         /// <summary>
         /// 

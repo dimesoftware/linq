@@ -8,7 +8,7 @@ using System.Linq;
 namespace Dime.Linq.Tests
 {
     [TestClass]
-    public class JoinTests
+    public class JoinExtensionsTests
     {
         [TestMethod]
         public void Linq_Join_SameType_ReturnsCollectionTwoWithDataFromCollectionOne()

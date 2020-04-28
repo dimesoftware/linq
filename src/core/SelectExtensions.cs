@@ -2,7 +2,7 @@
 
 namespace System.Linq
 {
-    public static partial class SelectExtensions
+    public static class SelectExtensions
     {
         /// <summary>
         /// Loops through each item in the source list and converts the value to the specified result type

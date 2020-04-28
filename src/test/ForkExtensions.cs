@@ -8,7 +8,7 @@ using System.Linq;
 namespace Dime.Linq.Tests
 {
     [TestClass]
-    public class ForkTests
+    public class ForkExtensions
     {
         [TestMethod]
         public void Linq_Fork_WithDataInBothSets_ShouldSplitIntoTwo_PopulatedSets()

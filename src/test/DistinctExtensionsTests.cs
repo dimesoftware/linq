@@ -7,7 +7,7 @@ using System.Linq;
 namespace Dime.Linq.Tests
 {
     [TestClass]
-    public class DistinctTests
+    public class DistinctExtensionsTests
     {
         [TestMethod]
         public void Linq_DistinctBy_Tuples_ShouldReturnDistinctItems()

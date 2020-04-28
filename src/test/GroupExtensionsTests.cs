@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Dime.Linq.Tests
 {
-    class GroupTests
+    [TestClass]
+    public class GroupExtensionsTests
     {
     }
 }
