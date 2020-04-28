@@ -2,7 +2,7 @@
 
 namespace System.Linq
 {
-    public static partial class FirstExtensions
+    public static class FirstExtensions
     {
         /// <summary>
         ///

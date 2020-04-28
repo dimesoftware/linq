@@ -2,7 +2,7 @@
 
 namespace System.Linq
 {
-    public static partial class AnyExtensions
+    public static class AnyExtensions
     {
         /// <summary>
         /// Checks if the <paramref name="enumerable"/> collection is null or empty
