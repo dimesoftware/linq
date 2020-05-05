@@ -27,8 +27,8 @@ namespace System.Linq
         Func<TA, TKey> selectKeyA,
         Func<TB, TKey> selectKeyB,
         Func<TA, TB, TKey, TResult> projection,
-        TA defaultA = default(TA),
-        TB defaultB = default(TB),
+        TA defaultA = default,
+        TB defaultB = default,
         IEqualityComparer<TKey> cmp = null)
         {
             cmp = cmp ?? EqualityComparer<TKey>.Default;
@@ -88,10 +88,10 @@ namespace System.Linq
                 while (iterator1.MoveNext())
                     yield return iterator2.MoveNext() ?
                         operation(iterator1.Current, iterator2.Current) :
-                        operation(iterator1.Current, default(TSecond));
+                        operation(iterator1.Current, default);
 
                 while (iterator2.MoveNext())
-                    yield return operation(default(TFirst), iterator2.Current);
+                    yield return operation(default, iterator2.Current);
             }
         }
     }
