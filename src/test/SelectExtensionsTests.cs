@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Dime.Linq.Tests.Mocks;
@@ -11,9 +12,9 @@ namespace Dime.Linq.Tests
     public class SelectExtensionsTests
     {
         [TestMethod]
-        public void Linq_SelectTry_ListIsNull_ThrowsNullReferenceException()
+        public void SelectTry_ListIsNull_ThrowsNullReferenceException()
         {
-            bool ParseId(Client client, out int number)
+            static bool ParseId(Client client, out int number)
             {
                 number = client.Id;
                 return true;
@@ -24,9 +25,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_SelectTry_ListIsPopulated_ReturnsIdentifiers()
+        public void SelectTry_ListIsPopulated_ReturnsIdentifiers()
         {
-            bool ParseId(Client client, out int number)
+            static bool ParseId(Client client, out int number)
             {
                 number = client.Id;
                 return true;
@@ -41,6 +42,14 @@ namespace Dime.Linq.Tests
 
             IEnumerable<int> identifiers = customers.SelectTry<Customer, Client, int>(x => new Client() { Id = x.Id }, ParseId);
             Assert.IsTrue(identifiers.Sum() == 21);
+        }
+
+        [TestMethod]
+        public void ConvertTo_IntToLong_ShouldReturnNewList()
+        {
+            IEnumerable<int> integerList = new List<int> { 1, 2, 3, 4, 5 };
+            IEnumerable<long> longList = integerList.ConvertTo<int, long>();
+            Assert.IsTrue(longList.Count() == 5);
         }
     }
 }
