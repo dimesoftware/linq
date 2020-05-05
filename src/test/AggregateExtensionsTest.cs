@@ -19,7 +19,7 @@ namespace Dime.Linq.Tests
                 new Customer(4, "Margareth Boyer", "New York")
             };
 
-            string allCustomers = customers.Aggregate(x => string.Join(",", x.Select(y => y.Id)));
+            string allCustomers = customers.Aggregate(x => x.Id);
             Assert.IsTrue(allCustomers == "1,2,3,4");
         }
     }
