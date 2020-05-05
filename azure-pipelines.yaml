@@ -1,5 +1,5 @@
 pool:
-  name: Azure Pipelines
+  vmImage: windows-latest
 steps:
 - task: solidify-labs.chucknorris-build-enhancer.chuck-norris-task.ChuckNorrisTask@0
   displayName: Quote
