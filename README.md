@@ -1,13 +1,13 @@
 # Introduction 
 
-![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.dime-linq?branchName=master) [![Dime.Linq package in Dime.Scheduler feed in Azure Artifacts](https://feeds.dev.azure.com/dimenicsbe/_apis/public/Packaging/Feeds/a7b896fd-9cd8-4291-afe1-f223483d87f0/Packages/a4ea1a44-b4ee-49dd-ba2f-eff013a1c9ce/Badge)](https://dev.azure.com/dimenicsbe/Utilities/_packaging?_a=package&feed=a7b896fd-9cd8-4291-afe1-f223483d87f0&package=a4ea1a44-b4ee-49dd-ba2f-eff013a1c9ce&preferRelease=true)
+![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.dime-linq?branchName=master) [![Dime.Linq package in Dime.Scheduler feed in Azure Artifacts](https://feeds.dev.azure.com/dimenicsbe/_apis/public/Packaging/Feeds/a7b896fd-9cd8-4291-afe1-f223483d87f0/Packages/a4ea1a44-b4ee-49dd-ba2f-eff013a1c9ce/Badge)](https://dev.azure.com/dimenicsbe/Utilities/_packaging?_a=package&feed=a7b896fd-9cd8-4291-afe1-f223483d87f0&package=a4ea1a44-b4ee-49dd-ba2f-eff013a1c9ce&preferRelease=true) ![Code coverage](https://img.shields.io/azure-devops/coverage/dimenicsbe/Utilities/133)
 
 Dime.Linq is a utility library which contains a set of extensions for the System.Linq namespace.
 
 ## Getting Started
 
 - You must have Visual Studio 2019 Community or higher.
-- The dotnet cli is also highly recommended.
+- The dotnet cli is also highly recommend
 
 ## About this project
 
@@ -44,11 +44,11 @@ public void MyMethod(IEnumerable<Customer> customerList)
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 
+Pull requests are welcome. Please check out the contribution and code of conduct guidelines.
 
-# License
+## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
