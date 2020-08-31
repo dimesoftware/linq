@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Dime.Linq.Tests.Mocks
+﻿namespace Dime.Linq.Tests.Mocks
 {
     internal class Customer
     {

@@ -17,6 +17,5 @@ namespace System.Linq
         /// <exception cref="System.InvalidOperationException">source contains no elements.</exception>
         public static string Aggregate<TSource, TDest>(this IEnumerable<TSource> source, Func<TSource, TDest> func, string separator = ",")
             => source.Select(func).Pipe(x => string.Join(separator, x));
-
     }
 }

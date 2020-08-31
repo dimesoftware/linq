@@ -2,7 +2,7 @@
 
 namespace System.Linq
 {
-    public static class ForkExtensions 
+    public static class ForkExtensions
     {
         /// <summary>
         /// Splits up the collection into a selection of records that match the filter and one pile of rejects.

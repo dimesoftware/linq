@@ -41,7 +41,7 @@ namespace System.Linq
             return from key in keys
                    from xa in alookup[key].DefaultIfEmpty(defaultA)
                    from xb in blookup[key].DefaultIfEmpty(defaultB)
-                   select projection(xa, xb, key);          
+                   select projection(xa, xb, key);
         }
 
         /// <summary>
