@@ -25,15 +25,11 @@ namespace System.Linq
                     catch (Exception ex)
                     {
                         action?.Invoke(ex);
-
                         continue;
                     }
 
                     if (next)
-                    {
-                        yield
-                            return enumerator.Current;
-                    }
+                        yield return enumerator.Current;
                 }
             }
         }

@@ -44,7 +44,7 @@ namespace System.Linq
             TryFunc<TValue, TResult> executor)
         {
             foreach (TSource s in source)
-                if (executor(selector(s), out var r))
+                if (executor(selector(s), out TResult r))
                     yield return r;
         }
     }
