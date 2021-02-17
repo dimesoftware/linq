@@ -44,6 +44,39 @@ namespace System.Linq
                    select projection(xa, xb, key);
         }
 
+        internal static IEnumerable<TResult> FullOuterGroupJoin<TA, TB, TKey, TResult>(
+           this IEnumerable<TA> a,
+           IEnumerable<TB> b,
+           Func<TA, TKey> selectKeyA,
+           Func<TB, TKey> selectKeyB,
+           Func<IEnumerable<TA>, IEnumerable<TB>, TKey, TResult> projection, IEqualityComparer<TKey> cmp = null)
+        {
+            cmp ??= EqualityComparer<TKey>.Default;
+            ILookup<TKey, TA> alookup = a.ToLookup(selectKeyA, cmp);
+            ILookup<TKey, TB> blookup = b.ToLookup(selectKeyB, cmp);
+
+            HashSet<TKey> keys = new HashSet<TKey>(alookup.Select(p => p.Key), cmp);
+            keys.UnionWith(blookup.Select(p => p.Key));
+
+            IEnumerable<TResult> join = from key in keys
+                                        let xa = alookup[key]
+                                        let xb = blookup[key]
+                                        select projection(xa, xb, key);
+
+            return join;
+        }
+
+        public static IEnumerable<TResult> LeftOuterJoin<TLeft, TRight, TKey, TResult>(
+            this IEnumerable<TLeft> left,
+            IEnumerable<TRight> right,
+            Func<TLeft, TKey> leftKey,
+            Func<TRight, TKey> rightKey,
+            Func<TLeft, TRight, TResult> result)
+            => left
+            .GroupJoin(right, leftKey, rightKey, (l, r) => (l, r))
+            .SelectMany(o => o.r.DefaultIfEmpty(), (l, r) => new { lft = l.l, rght = r })
+            .Select(o => result.Invoke(o.lft, o.rght));
+
         /// <summary>
         /// Zips the (uneven) collections together
         /// </summary>
