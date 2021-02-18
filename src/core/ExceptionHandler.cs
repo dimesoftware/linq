@@ -13,24 +13,22 @@ namespace System.Linq
         /// <returns></returns>
         public static IEnumerable<T> CatchExceptions<T>(this IEnumerable<T> src, Action<Exception> action = null)
         {
-            using (IEnumerator<T> enumerator = src.GetEnumerator())
+            using IEnumerator<T> enumerator = src.GetEnumerator();
+            bool next = true;
+            while (next)
             {
-                bool next = true;
-                while (next)
+                try
                 {
-                    try
-                    {
-                        next = enumerator.MoveNext();
-                    }
-                    catch (Exception ex)
-                    {
-                        action?.Invoke(ex);
-                        continue;
-                    }
-
-                    if (next)
-                        yield return enumerator.Current;
+                    next = enumerator.MoveNext();
                 }
+                catch (Exception ex)
+                {
+                    action?.Invoke(ex);
+                    continue;
+                }
+
+                if (next)
+                    yield return enumerator.Current;
             }
         }
     }

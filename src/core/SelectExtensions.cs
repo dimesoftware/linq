@@ -13,16 +13,12 @@ namespace System.Linq
         /// <returns>The same list as the source but with a different type</returns>
         public static IEnumerable<TResult> ConvertTo<TSource, TResult>(this IEnumerable<TSource> src) where TResult : struct
         {
-            // Get the enumerator
-            using (IEnumerator<TSource> enumerator = src.GetEnumerator())
+            using IEnumerator<TSource> enumerator = src.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                // Loop through each item
-                while (enumerator.MoveNext())
-                {
-                    // Convert the source value to an instance of the TResult type
-                    TResult parsedValue = (TResult)Convert.ChangeType(enumerator.Current, typeof(TResult));
-                    yield return parsedValue;
-                }
+                // Convert the source value to an instance of the TResult type
+                TResult parsedValue = (TResult)Convert.ChangeType(enumerator.Current, typeof(TResult));
+                yield return parsedValue;
             }
         }
 
