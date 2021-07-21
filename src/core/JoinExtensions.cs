@@ -18,7 +18,7 @@ namespace System.Linq
             ILookup<TKey, TA> alookup = a.ToLookup(selectKeyA, cmp);
             ILookup<TKey, TB> blookup = b.ToLookup(selectKeyB, cmp);
 
-            HashSet<TKey> keys = new HashSet<TKey>(alookup.Select(p => p.Key), cmp);
+            HashSet<TKey> keys = new(alookup.Select(p => p.Key), cmp);
             keys.UnionWith(blookup.Select(p => p.Key));
 
             return from key in keys
@@ -38,7 +38,7 @@ namespace System.Linq
             ILookup<TKey, TA> alookup = a.ToLookup(selectKeyA, cmp);
             ILookup<TKey, TB> blookup = b.ToLookup(selectKeyB, cmp);
 
-            HashSet<TKey> keys = new HashSet<TKey>(alookup.Select(p => p.Key), cmp);
+            HashSet<TKey> keys = new(alookup.Select(p => p.Key), cmp);
             keys.UnionWith(blookup.Select(p => p.Key));
 
             return from key in keys

@@ -9,9 +9,9 @@ namespace Dime.Linq.Tests
     public class ForkExtensions
     {
         [TestMethod]
-        public void Linq_Fork_WithDataInBothSets_ShouldSplitIntoTwo_PopulatedSets()
+        public void Fork_WithDataInBothSets_ShouldSplitIntoTwo_PopulatedSets()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Amanda Hugankiss", "Moe's Tavern"),
                 new Customer(2, "Hugh Jazz", "Bumtown"),
@@ -25,9 +25,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_Fork_WithEmptyDataInOneSet_ShouldSplitIntoTwo_EmptyCollection()
+        public void Fork_WithEmptyDataInOneSet_ShouldSplitIntoTwo_EmptyCollection()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(2, "Hugh Jazz", "Bumtown"),
                 new Customer(3, "I.P. Freely", "Bumtown")
@@ -40,9 +40,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_Fork_WithEmptyDataInBothSet_ShouldSplitIntoTwo_NoData()
+        public void Fork_WithEmptyDataInBothSet_ShouldSplitIntoTwo_NoData()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Amanda Hugankiss", "Moe's Tavern"),
                 new Customer(2, "Hugh Jazz", "Bumtown"),

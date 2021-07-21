@@ -11,7 +11,7 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void GroupByMany_NoDuplicates_ShouldReturnFlatGroup()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Jeff", "New York"),
                 new Customer(2, "Harvey", "Los Angeles"),
@@ -36,7 +36,7 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void GroupByMany_HasDuplicates_ShouldReturnNestedGroups()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Jeff", "New York"),
                 new Customer(2, "Harvey", "Los Angeles"),

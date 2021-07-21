@@ -31,7 +31,7 @@ namespace Dime.Linq.Tests
                 return true;
             }
 
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Hello", "World"),
                 new Customer(5, "Hello", "World"),

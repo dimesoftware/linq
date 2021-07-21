@@ -9,23 +9,23 @@ namespace Dime.Linq.Tests
     public class AnyExtensionsTests
     {
         [TestMethod]
-        public void Linq_IsNullOrEmpty_IsNull_ReturnsTrue()
+        public void IsNullOrEmpty_IsNull_ReturnsTrue()
         {
             List<Customer> customers = null;
             Assert.IsTrue(customers.IsNullOrEmpty());
         }
 
         [TestMethod]
-        public void Linq_IsNullOrEmpty_IsEmpty_ReturnsTrue()
+        public void IsNullOrEmpty_IsEmpty_ReturnsTrue()
         {
-            List<Customer> customers = new List<Customer>();
+            List<Customer> customers = new();
             Assert.IsTrue(customers.IsNullOrEmpty());
         }
 
         [TestMethod]
-        public void Linq_IsNullOrEmpty_IsEmpty_ReturnsFalse()
+        public void IsNullOrEmpty_IsEmpty_ReturnsFalse()
         {
-            List<Customer> customers = new List<Customer>() { new Customer() };
+            List<Customer> customers = new() { new Customer() };
             Assert.IsFalse(customers.IsNullOrEmpty());
         }
     }

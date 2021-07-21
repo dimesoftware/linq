@@ -11,7 +11,7 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void Pipe()
         {
-            List<Customer> customers = new List<Customer>()
+            List<Customer> customers = new()
             {
                 new Customer(1, "Jake Marquez", "New York"),
                 new Customer(2, "Michael Jennings", "Pittsburgh"),

@@ -11,22 +11,14 @@
 <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
 </p>
 
-Dime.Linq is a utility library which contains a set of extensions for the System.Linq namespace.
+## About this project
+
+Dime.Linq is a utility library which contains a set of extensions for the System.Linq namespace. Check out the wiki for an overview of the extension methods. 
 
 ## Getting Started
 
 - You must have Visual Studio 2019 Community or higher.
 - The dotnet cli is also highly recommend
-
-## About this project
-
-Some interesting extension methods in this assembly include:
-
-- `Fork`: Not only returns the filtered set but also the rejected pile of records.
-- `DistinctBy`: returns a distinct list based on an expression condition.
-- `Pipe`: an all purpose extension method which gives you access to the entire collection.
-- `SelectTry`: Generic method to return a different type from the select statement.
-
 
 ## Build and Test
 

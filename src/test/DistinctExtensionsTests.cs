@@ -10,9 +10,9 @@ namespace Dime.Linq.Tests
     public class DistinctExtensionsTests
     {
         [TestMethod]
-        public void Linq_DistinctBy_Tuples_ShouldReturnDistinctItems()
+        public void DistinctBy_Tuples_ShouldReturnDistinctItems()
         {
-            List<Tuple<int, Customer>> customers = new List<Tuple<int, Customer>>()
+            List<Tuple<int, Customer>> customers = new()
             {
                 new Tuple<int, Customer>(1, new Customer(1, "Category 1", "Address 1")),
                 new Tuple<int, Customer>(2, new Customer(2, "Category 2", "Address 1")),
@@ -26,9 +26,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_DistinctBy_List_ShouldReturnDistinctItems()
+        public void DistinctBy_List_ShouldReturnDistinctItems()
         {
-            List<Customer> customers = new List<Customer>()
+            List<Customer> customers = new()
             {
                 new Customer(1, "Category 1", "Address 1"),
                 new Customer(2, "Category 2", "Address 1"),
@@ -42,9 +42,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_DistinctBy_List_Filter_ShouldReturnDistinctItems()
+        public void DistinctBy_List_Filter_ShouldReturnDistinctItems()
         {
-            List<Customer> customers = new List<Customer>()
+            List<Customer> customers = new()
             {
                 new Customer(1, "Category 1", "Address 1"),
                 new Customer(2, "Category 2", "Address 1"),

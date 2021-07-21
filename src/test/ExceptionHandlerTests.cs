@@ -9,9 +9,9 @@ namespace Dime.Linq.Tests
     public class ExceptionHandlerTests
     {
         [TestMethod]
-        public void Linq_CatchExceptions_LoopsWithoutErrors()
+        public void CatchExceptions_LoopsWithoutErrors()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Handsome B. Wonderful", "World"),
                 null,

@@ -10,16 +10,16 @@ namespace Dime.Linq.Tests
     public class FirstExtensionsTests
     {
         [TestMethod]
-        public void Linq_First_SourceIsNull_ThrowsException()
+        public void First_SourceIsNull_ThrowsException()
         {
             List<Customer> customers = null;
             Assert.ThrowsException<ArgumentNullException>(() => customers.First(x => x.Id > 0, x => x.Name != "Handsome B. Wonderful"));
         }
 
         [TestMethod]
-        public void Linq_First_FirstFilterPasses_ReturnsItem()
+        public void First_FirstFilterPasses_ReturnsItem()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Hello", "World"),
                 new Customer(5, "Hello", "World"),
@@ -31,9 +31,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_First_SecondFilterPasses_ReturnsItem()
+        public void First_SecondFilterPasses_ReturnsItem()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Handsome B. Wonderful", "World"),
                 new Customer(5, "Hello", "World"),
@@ -45,9 +45,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_First_NoFilterPasses_ReturnsDefault()
+        public void First_NoFilterPasses_ReturnsDefault()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Handsome B. Wonderful", "World"),
                 new Customer(5, "Hello", "World"),
@@ -59,7 +59,7 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_FirstOrDefault_SourceIsNull_ThrowsException()
+        public void FirstOrDefault_SourceIsNull_ThrowsException()
         {
             List<Customer> customers = null;
 
@@ -67,9 +67,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_FirstOrDefault_FirstFilterPasses_ReturnsItem()
+        public void FirstOrDefault_FirstFilterPasses_ReturnsItem()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Hello", "World"),
                 new Customer(5, "Hello", "World"),
@@ -81,9 +81,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_FirstOrDefault_SecondFilterPasses_ReturnsItem()
+        public void FirstOrDefault_SecondFilterPasses_ReturnsItem()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Handsome B. Wonderful", "World"),
                 new Customer(5, "Hello", "World"),
@@ -95,9 +95,9 @@ namespace Dime.Linq.Tests
         }
 
         [TestMethod]
-        public void Linq_FirstOrDefault_NoFilterPasses_ReturnsDefault()
+        public void FirstOrDefault_NoFilterPasses_ReturnsDefault()
         {
-            List<Customer> customers = new List<Customer>
+            List<Customer> customers = new()
             {
                 new Customer(1, "Handsome B. Wonderful", "World"),
                 new Customer(5, "Hello", "World"),

@@ -18,7 +18,7 @@ namespace System.Linq
         /// <returns></returns>
         public static IEnumerable<Tuple<T2, T1>> DistinctBy<T1, T2, TKey>(this IEnumerable<Tuple<T2, T1>> tuples, Func<T1, TKey> qualifier)
         {
-            HashSet<TKey> set = new HashSet<TKey>();
+            HashSet<TKey> set = new();
             foreach (Tuple<T2, T1> tuple in tuples)
             {
                 TKey key = qualifier(tuple.Item2);
@@ -40,7 +40,7 @@ namespace System.Linq
         /// <returns></returns>
         public static IEnumerable<T> DistinctBy<T, TKey>(this IEnumerable<T> items, Func<T, TKey> qualifier)
         {
-            HashSet<TKey> set = new HashSet<TKey>();
+            HashSet<TKey> set = new();
 
             foreach (T item in items)
             {
@@ -64,7 +64,7 @@ namespace System.Linq
         /// <returns></returns>
         public static IEnumerable<T> DistinctBy<T, TKey>(this IEnumerable<T> items, Func<T, TKey> qualifier, Func<T, bool> condition)
         {
-            HashSet<TKey> set = new HashSet<TKey>();
+            HashSet<TKey> set = new();
             foreach (T item in items)
             {
                 TKey key = qualifier(item);
