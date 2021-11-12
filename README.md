@@ -3,9 +3,9 @@
 <h1 align="center"> Linq </h1>  
 
 <p align="center">  
-<img src="https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.linq?branchName=master"/>
-<img src="https://feeds.dev.azure.com/dimenicsbe/_apis/public/Packaging/Feeds/a7b896fd-9cd8-4291-afe1-f223483d87f0/Packages/a4ea1a44-b4ee-49dd-ba2f-eff013a1c9ce/Badge"/>
-<img src="https://img.shields.io/azure-devops/coverage/dimenicsbe/Utilities/155/master" />
+<img src="https://dev.azure.com/dimesoftware/Utilities/_apis/build/status/dimenics.linq?branchName=master"/>
+<img src="https://feeds.dev.azure.com/dimesoftware/_apis/public/Packaging/Feeds/a7b896fd-9cd8-4291-afe1-f223483d87f0/Packages/a4ea1a44-b4ee-49dd-ba2f-eff013a1c9ce/Badge"/>
+<img src="https://img.shields.io/azure-devops/coverage/dimesoftware/Utilities/155/master" />
 <img src="https://github.com/dimenics/linq/workflows/CodeQL/badge.svg" />
 <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
 <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
