@@ -30,6 +30,8 @@ namespace System.Linq
             }
         }
 
+#if NET6_0_OR_GREATER
+#else
         /// <summary>
         ///
         /// </summary>
@@ -52,6 +54,7 @@ namespace System.Linq
                 set.Add(key);
             }
         }
+#endif
 
         /// <summary>
         ///

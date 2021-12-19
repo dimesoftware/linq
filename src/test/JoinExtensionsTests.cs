@@ -201,7 +201,7 @@ namespace Dime.Linq.Tests
                 })
                 .ToList();
 
-            Assert.IsTrue(groups.Count() == 2);
+            Assert.IsTrue(groups.Count == 2);
             Assert.IsTrue(groups.ElementAt(0) == "Jose Guerrero Delgado");
             Assert.IsTrue(groups.ElementAt(1) == "Karen Smith");
         }
@@ -229,7 +229,7 @@ namespace Dime.Linq.Tests
                 (a, b) => a.Name + " " + b.LastName)
                 .ToList();
 
-            Assert.IsTrue(groups.Count() == 3);
+            Assert.IsTrue(groups.Count == 3);
             Assert.IsTrue(groups.ElementAt(0) == "Jose Guerrero");
             Assert.IsTrue(groups.ElementAt(1) == "Jose Delgado");
             Assert.IsTrue(groups.ElementAt(2) == "Karen Smith");
