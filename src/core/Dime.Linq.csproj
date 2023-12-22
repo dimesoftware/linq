@@ -1,29 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;net5.0;net6.0</TargetFrameworks>
-    <Version>1.3.5</Version>
+    <TargetFrameworks>net461;net48;net8.0</TargetFrameworks>
+    <Version>1.3.6</Version>
     <Authors>Dime Software</Authors>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Extensions for the LINQ library</Description>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/dimenics/linq</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dimesoftware/linq</RepositoryUrl>
     <PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/dimenics/linq</PackageProjectUrl>
     <PackageTags>utilities;linq;dotnet;csharp</PackageTags>
-    <Copyright>Copyright © 2021</Copyright>
+    <Copyright>Copyright © 2023</Copyright>
     <PackageTags>linq</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>1.3.5.0</AssemblyVersion>
-    <FileVersion>1.3.5.0</FileVersion>
+    <AssemblyVersion>1.3.6.0</AssemblyVersion>
+    <FileVersion>1.3.6.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IncludeSource>True</IncludeSource>
     <IncludeSymbols>True</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
 
