@@ -31,12 +31,12 @@ namespace Dime.Linq.Tests
                 return true;
             }
 
-            List<Customer> customers = new()
-            {
+            List<Customer> customers =
+            [
                 new Customer(1, "Hello", "World"),
                 new Customer(5, "Hello", "World"),
                 new Customer(15, "Hello", "World")
-            };
+            ];
 
             IEnumerable<int> identifiers = customers.SelectTry<Customer, Client, int>(x => new Client() { Id = x.Id }, ParseId);
             Assert.IsTrue(identifiers.Sum() == 21);

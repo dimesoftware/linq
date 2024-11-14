@@ -11,13 +11,13 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void Pipe()
         {
-            List<Customer> customers = new()
-            {
+            List<Customer> customers =
+            [
                 new Customer(1, "Jake Marquez", "New York"),
                 new Customer(2, "Michael Jennings", "Pittsburgh"),
                 new Customer(3, "Frank Hansom", "Phoenix"),
                 new Customer(4, "Margareth Boyer", "New York")
-            };
+            ];
 
             string allCustomers = customers.Select(x => x.Id).Pipe(x => string.Join(",", x));
             Assert.IsTrue(allCustomers == "1,2,3,4");

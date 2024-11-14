@@ -10,6 +10,7 @@ namespace System.Linq
         /// <typeparam name="T">The type of the collection</typeparam>
         /// <param name="enumerable">The collection to check</param>
         /// <returns>True if any of the conditions are valid: either null or empty</returns>
-        public static bool IsNullOrEmpty<T>(this IEnumerable<T> enumerable) => !enumerable?.Any() ?? true;
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> enumerable) 
+            => !enumerable?.Any() ?? true;
     }
 }

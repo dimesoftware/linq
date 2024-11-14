@@ -18,14 +18,14 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void IsNullOrEmpty_IsEmpty_ReturnsTrue()
         {
-            List<Customer> customers = new();
+            List<Customer> customers = [];
             Assert.IsTrue(customers.IsNullOrEmpty());
         }
 
         [TestMethod]
         public void IsNullOrEmpty_IsEmpty_ReturnsFalse()
         {
-            List<Customer> customers = new() { new Customer() };
+            List<Customer> customers = [new Customer()];
             Assert.IsFalse(customers.IsNullOrEmpty());
         }
     }

@@ -11,12 +11,12 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void Fork_WithDataInBothSets_ShouldSplitIntoTwo_PopulatedSets()
         {
-            List<Customer> customers = new()
-            {
+            List<Customer> customers =
+            [
                 new Customer(1, "Amanda Hugankiss", "Moe's Tavern"),
                 new Customer(2, "Hugh Jazz", "Bumtown"),
                 new Customer(3, "I.P. Freely", "Bumtown")
-            };
+            ];
 
             (IEnumerable<Customer> success, IEnumerable<Customer> failed) = customers.Fork(x => x.Address == "Bumtown");
 
@@ -27,11 +27,11 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void Fork_WithEmptyDataInOneSet_ShouldSplitIntoTwo_EmptyCollection()
         {
-            List<Customer> customers = new()
-            {
+            List<Customer> customers =
+            [
                 new Customer(2, "Hugh Jazz", "Bumtown"),
                 new Customer(3, "I.P. Freely", "Bumtown")
-            };
+            ];
 
             (IEnumerable<Customer> success, IEnumerable<Customer> failed) = customers.Fork(x => x.Address == "Bumtown");
 
@@ -42,12 +42,12 @@ namespace Dime.Linq.Tests
         [TestMethod]
         public void Fork_WithEmptyDataInBothSet_ShouldSplitIntoTwo_NoData()
         {
-            List<Customer> customers = new()
-            {
+            List<Customer> customers =
+            [
                 new Customer(1, "Amanda Hugankiss", "Moe's Tavern"),
                 new Customer(2, "Hugh Jazz", "Bumtown"),
                 new Customer(3, "I.P. Freely", "Bumtown")
-            };
+            ];
 
             (IEnumerable<Customer> success, IEnumerable<Customer> failed) = customers.Fork(x => x.Address == "Not Bumtown");
 
