@@ -20,7 +20,7 @@ namespace Dime.Linq.Tests
             ];
 
             string allCustomers = customers.Select(x => x.Id).Pipe(x => string.Join(",", x));
-            Assert.IsTrue(allCustomers == "1,2,3,4");
+            Assert.AreEqual("1,2,3,4", allCustomers);
         }
     }
 }

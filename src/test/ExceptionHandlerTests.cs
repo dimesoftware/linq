@@ -19,7 +19,7 @@ namespace Dime.Linq.Tests
             ];
 
             List<Client> clients = customers.Select(x => new Client { Id = x.Id }).CatchExceptions(x => { }).ToList();
-            Assert.IsTrue(clients.Count() == 2);
+            Assert.AreEqual(2, clients.Count());
         }
     }
 }

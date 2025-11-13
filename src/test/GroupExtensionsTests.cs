@@ -21,16 +21,16 @@ namespace Dime.Linq.Tests
             ];
 
             List<IGrouping<object, Customer>> groups = customers.GroupByMany(x => x.Name, x => x.Address).ToList();
-            Assert.IsTrue(groups.Count == 5);
+            Assert.AreEqual(5, groups.Count);
 
-            Assert.IsTrue(
-                groups
+            Assert.AreEqual(
+1, groups
                     .FirstOrDefault(x =>
                     {
                         object[] keys = x.Key as object[];
                         return (string)keys[0] == "Jeff" && (string)keys[1] == "New York";
                     })
-                    .Count() == 1);
+                    .Count());
         }
 
         [TestMethod]
@@ -46,16 +46,16 @@ namespace Dime.Linq.Tests
             ];
 
             List<IGrouping<object, Customer>> groups = customers.GroupByMany(x => x.Name, x => x.Address).ToList();
-            Assert.IsTrue(groups.Count == 4);
+            Assert.AreEqual(4, groups.Count);
 
-            Assert.IsTrue(
-                groups
+            Assert.AreEqual(
+2, groups
                     .FirstOrDefault(x =>
                     {
                         object[] keys = x.Key as object[];
                         return (string)keys[0] == "Jeff" && (string)keys[1] == "New York";
                     })
-                    .Count() == 2);
+                    .Count());
         }
     }
 }

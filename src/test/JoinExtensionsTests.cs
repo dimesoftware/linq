@@ -26,8 +26,8 @@ namespace Dime.Linq.Tests
             ];
 
             IEnumerable<Customer> mergedLists = customers1.Merge<Customer>(customers2, (x, y) => new Customer(y.Id, x.Name, x.Address));
-            Assert.IsTrue(mergedLists.Count() == 3);
-            Assert.IsTrue(mergedLists.ElementAt(0).Name == "Customer 1");
+            Assert.AreEqual(3, mergedLists.Count());
+            Assert.AreEqual("Customer 1", mergedLists.ElementAt(0).Name);
         }
 
         [TestMethod]
@@ -49,8 +49,8 @@ namespace Dime.Linq.Tests
             ];
 
             IEnumerable<Customer> mergedLists = customers1.Merge<Customer>(customers2, (x, y) => new Customer(y.Id, x.Name, x.Address));
-            Assert.IsTrue(mergedLists.Count() == 4);
-            Assert.IsTrue(mergedLists.ElementAt(0).Name == "Customer 1");
+            Assert.AreEqual(4, mergedLists.Count());
+            Assert.AreEqual("Customer 1", mergedLists.ElementAt(0).Name);
         }
 
         [TestMethod]
@@ -72,8 +72,8 @@ namespace Dime.Linq.Tests
             ];
 
             IEnumerable<Customer> mergedLists = customers1.Merge<Customer>(customers2, (x, y) => new Customer(y.Id, x.Name, x.Address));
-            Assert.IsTrue(mergedLists.Count() == 4);
-            Assert.IsTrue(mergedLists.ElementAt(0).Name == "Customer 1");
+            Assert.AreEqual(4, mergedLists.Count());
+            Assert.AreEqual("Customer 1", mergedLists.ElementAt(0).Name);
         }
 
         [TestMethod]
@@ -94,8 +94,8 @@ namespace Dime.Linq.Tests
             ];
 
             IEnumerable<Client> mergedLists = customers1.Merge(customers2, (x, y) => new Client(y.Id, x.Name, x.Address));
-            Assert.IsTrue(mergedLists.Count() == 3);
-            Assert.IsTrue(mergedLists.ElementAt(0).Name == "Customer 1");
+            Assert.AreEqual(3, mergedLists.Count());
+            Assert.AreEqual("Customer 1", mergedLists.ElementAt(0).Name);
         }
 
         [TestMethod]
@@ -117,8 +117,8 @@ namespace Dime.Linq.Tests
             ];
 
             IEnumerable<Client> mergedLists = customers1.Merge(customers2, (x, y) => new Client(y?.Id ?? x.Id, x?.Name ?? y.Name, x?.Address ?? y.Address));
-            Assert.IsTrue(mergedLists.Count() == 4);
-            Assert.IsTrue(mergedLists.ElementAt(0).Name == "Customer 1");
+            Assert.AreEqual(4, mergedLists.Count());
+            Assert.AreEqual("Customer 1", mergedLists.ElementAt(0).Name);
         }
 
         [TestMethod]
@@ -140,8 +140,8 @@ namespace Dime.Linq.Tests
             ];
 
             IEnumerable<Client> mergedLists = customers1.Merge(customers2, (x, y) => new Client(y?.Id ?? x.Id, x?.Name ?? y.Name, x?.Address ?? y.Address));
-            Assert.IsTrue(mergedLists.Count() == 4);
-            Assert.IsTrue(mergedLists.ElementAt(0).Name == "Customer 1");
+            Assert.AreEqual(4, mergedLists.Count());
+            Assert.AreEqual("Customer 1", mergedLists.ElementAt(0).Name);
         }
 
         [TestMethod]
@@ -170,8 +170,8 @@ namespace Dime.Linq.Tests
                 new Client(0, "Unknown client", ""))
                 .ToList();
 
-            Assert.IsTrue(mergedLists.Count() == 5);
-            Assert.IsTrue(mergedLists.ElementAt(2).Name == "Customer 3");
+            Assert.AreEqual(5, mergedLists.Count());
+            Assert.AreEqual("Customer 3", mergedLists.ElementAt(2).Name);
         }
 
         [TestMethod]
@@ -201,9 +201,9 @@ namespace Dime.Linq.Tests
                 })
                 .ToList();
 
-            Assert.IsTrue(groups.Count == 2);
-            Assert.IsTrue(groups.ElementAt(0) == "Jose Guerrero Delgado");
-            Assert.IsTrue(groups.ElementAt(1) == "Karen Smith");
+            Assert.AreEqual(2, groups.Count);
+            Assert.AreEqual("Jose Guerrero Delgado", groups.ElementAt(0));
+            Assert.AreEqual("Karen Smith", groups.ElementAt(1));
         }
 
         [TestMethod]
@@ -229,10 +229,10 @@ namespace Dime.Linq.Tests
                 (a, b) => a.Name + " " + b.LastName)
                 .ToList();
 
-            Assert.IsTrue(groups.Count == 3);
-            Assert.IsTrue(groups.ElementAt(0) == "Jose Guerrero");
-            Assert.IsTrue(groups.ElementAt(1) == "Jose Delgado");
-            Assert.IsTrue(groups.ElementAt(2) == "Karen Smith");
+            Assert.AreEqual(3, groups.Count);
+            Assert.AreEqual("Jose Guerrero", groups.ElementAt(0));
+            Assert.AreEqual("Jose Delgado", groups.ElementAt(1));
+            Assert.AreEqual("Karen Smith", groups.ElementAt(2));
         }
     }
 }
