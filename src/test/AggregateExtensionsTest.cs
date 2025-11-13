@@ -20,7 +20,7 @@ namespace Dime.Linq.Tests
             ];
 
             string allCustomers = customers.Aggregate(x => x.Id);
-            Assert.IsTrue(allCustomers == "1,2,3,4");
+            Assert.AreEqual("1,2,3,4", allCustomers);
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace Dime.Linq.Tests
             ];
 
             string allCustomers = customers.Aggregate(x => x.Id, ". ");
-            Assert.IsTrue(allCustomers == "1. 2. 3. 4");
+            Assert.AreEqual("1. 2. 3. 4", allCustomers);
         }
     }
 }

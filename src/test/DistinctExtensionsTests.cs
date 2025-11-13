@@ -22,7 +22,7 @@ namespace Dime.Linq.Tests
                 new Tuple<int, Customer>(6, new Customer(6, "Category 2", "Address 1"))
             ];
 
-            Assert.IsTrue(customers.DistinctBy(x => x.Name).Count() == 3);
+            Assert.AreEqual(3, customers.DistinctBy(x => x.Name).Count());
         }
 
         [TestMethod]
@@ -38,7 +38,7 @@ namespace Dime.Linq.Tests
                 new Customer(6, "Category 2", "Address 1")
             ];
 
-            Assert.IsTrue(customers.DistinctBy(x => x.Name).Count() == 3);
+            Assert.AreEqual(3, customers.DistinctBy(x => x.Name).Count());
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace Dime.Linq.Tests
                 new Customer(6, "Category 2", "Address 1")
             ];
 
-            Assert.IsTrue(customers.DistinctBy(x => x.Name, x => x.Id != 4).Count() == 2);
+            Assert.AreEqual(2, customers.DistinctBy(x => x.Name, x => x.Id != 4).Count());
         }
     }
 }

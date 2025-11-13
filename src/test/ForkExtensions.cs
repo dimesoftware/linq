@@ -20,8 +20,8 @@ namespace Dime.Linq.Tests
 
             (IEnumerable<Customer> success, IEnumerable<Customer> failed) = customers.Fork(x => x.Address == "Bumtown");
 
-            Assert.IsTrue(success.Count() == 2);
-            Assert.IsTrue(failed.Count() == 1);
+            Assert.AreEqual(2, success.Count());
+            Assert.AreEqual(1, failed.Count());
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace Dime.Linq.Tests
 
             (IEnumerable<Customer> success, IEnumerable<Customer> failed) = customers.Fork(x => x.Address == "Bumtown");
 
-            Assert.IsTrue(success.Count() == 2);
+            Assert.AreEqual(2, success.Count());
             Assert.IsTrue(!failed.Any());
         }
 
@@ -52,7 +52,7 @@ namespace Dime.Linq.Tests
             (IEnumerable<Customer> success, IEnumerable<Customer> failed) = customers.Fork(x => x.Address == "Not Bumtown");
 
             Assert.IsTrue(!success.Any());
-            Assert.IsTrue(failed.Count() == 3);
+            Assert.AreEqual(3, failed.Count());
         }
     }
 }

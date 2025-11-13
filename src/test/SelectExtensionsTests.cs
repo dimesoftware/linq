@@ -19,7 +19,7 @@ namespace Dime.Linq.Tests
             }
 
             List<Customer> customers = null;
-            Assert.ThrowsException<NullReferenceException>(() => customers.SelectTry<Customer, Client, int>(x => new Client() { Id = x.Id }, ParseId).ToList());
+            Assert.Throws<NullReferenceException>(() => customers.SelectTry<Customer, Client, int>(x => new Client() { Id = x.Id }, ParseId).ToList());
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace Dime.Linq.Tests
             ];
 
             IEnumerable<int> identifiers = customers.SelectTry<Customer, Client, int>(x => new Client() { Id = x.Id }, ParseId);
-            Assert.IsTrue(identifiers.Sum() == 21);
+            Assert.AreEqual(21, identifiers.Sum());
         }
 
         [TestMethod]
@@ -47,7 +47,7 @@ namespace Dime.Linq.Tests
         {
             IEnumerable<int> integerList = new List<int> { 1, 2, 3, 4, 5 };
             IEnumerable<long> longList = integerList.ConvertTo<int, long>();
-            Assert.IsTrue(longList.Count() == 5);
+            Assert.AreEqual(5, longList.Count());
         }
     }
 }

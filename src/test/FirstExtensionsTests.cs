@@ -13,7 +13,7 @@ namespace Dime.Linq.Tests
         public void First_SourceIsNull_ThrowsException()
         {
             List<Customer> customers = null;
-            Assert.ThrowsException<ArgumentNullException>(() => customers.First(x => x.Id > 0, x => x.Name != "Handsome B. Wonderful"));
+            Assert.Throws<ArgumentNullException>(() => customers.First(x => x.Id > 0, x => x.Name != "Handsome B. Wonderful"));
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace Dime.Linq.Tests
             ];
 
             Customer firstCustomer = customers.First(x => x.Id > 0, x => x.Name != "Handsome B. Wonderful");
-            Assert.IsTrue(firstCustomer.Id == 1);
+            Assert.AreEqual(1, firstCustomer.Id);
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace Dime.Linq.Tests
             ];
 
             Customer firstCustomer = customers.First(x => x.Id > 1, x => x.Name == "Handsome B. Wonderful");
-            Assert.IsTrue(firstCustomer.Id == 5);
+            Assert.AreEqual(5, firstCustomer.Id);
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace Dime.Linq.Tests
             ];
 
             Customer firstCustomer = customers.First(x => x.Id > 15, x => x.Name == "Handsome B. Wonderful");
-            Assert.IsTrue(firstCustomer.Id == 1);
+            Assert.AreEqual(1, firstCustomer.Id);
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace Dime.Linq.Tests
         {
             List<Customer> customers = null;
 
-            Assert.ThrowsException<ArgumentNullException>(() => customers.FirstOrDefault(x => x.Id > 0, x => x.Name != "Handsome B. Wonderful"));
+            Assert.Throws<ArgumentNullException>(() => customers.FirstOrDefault(x => x.Id > 0, x => x.Name != "Handsome B. Wonderful"));
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace Dime.Linq.Tests
             ];
 
             Customer firstCustomer = customers.FirstOrDefault(x => x.Id > 0, x => x.Name != "Handsome B. Wonderful");
-            Assert.IsTrue(firstCustomer.Id == 1);
+            Assert.AreEqual(1, firstCustomer.Id);
         }
 
         [TestMethod]
@@ -91,7 +91,7 @@ namespace Dime.Linq.Tests
             ];
 
             Customer firstCustomer = customers.FirstOrDefault(x => x.Id > 1, x => x.Name == "Handsome B. Wonderful");
-            Assert.IsTrue(firstCustomer.Id == 5);
+            Assert.AreEqual(5, firstCustomer.Id);
         }
 
         [TestMethod]
@@ -105,7 +105,7 @@ namespace Dime.Linq.Tests
             ];
 
             Customer firstCustomer = customers.FirstOrDefault(x => x.Id > 15, x => x.Name == "Handsome B. Wonderful");
-            Assert.IsTrue(firstCustomer.Id == 1);
+            Assert.AreEqual(1, firstCustomer.Id);
         }
     }
 }
